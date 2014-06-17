@@ -6,4 +6,4 @@ I plan to compile my scripts into a useful library that will help translate many
 
 Currently, I am looking to focus on Bayes theorem, Neural Networks, and more. My hope is to eventually make something similar to PyBrain, but for Swift.
 
-Please feel free to contribute any machine learning algorithms!
+Feel free to contribute.
