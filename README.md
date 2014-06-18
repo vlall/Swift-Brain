@@ -10,13 +10,13 @@ Feel free to contribute.
 
 
 ##Topics being Developed 
-####Matrices
-    1. Matrix operations
-####Machine Learning algorithms 
-    2. Neural Networks
-    3. Support Vector Machines
-    4. Bayesian Classifiers 
-    5. Self Organized Maps (maybe?)
-####Statistics
-    1. Bayes Theorem
-    2. Kalman Filter 
+1. Matrices
+    + Matrix operations
+2. Machine Learning algorithms 
+    +  Neural Networks
+    +  Support Vector Machines
+    +  Bayesian Classifiers 
+    +  Self Organized Maps (maybe?)
+3. Statistics
+    +  Bayes Theorem
+    +  Kalman Filter 
