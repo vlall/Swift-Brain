@@ -2,7 +2,7 @@
 
 import Foundation
 
-// Create exponents with '**'
+// Create exponents with '**', must be defined at the beginning
 operator infix ** {}
 func ** (num: Double, power: Double) -> Double{
     return pow(num, power)
@@ -14,13 +14,15 @@ func randomFunc(a: Double, b:Double) -> (Double) {
     return output
 }
 
-func randomFunc(I:Double, J:Double)->(ArrayType){
+func randomFunc(I:Double, J:Double)->(Array<Array<Double>>){
     var fill = 0.0
-    var m: Integer[] = []
+    var m = Array<Array<Double>>()
     for index in 1...I{
-        m.append([fill]*J)
-    return m
+        for nextIndex in 1...J{
+            m.append([fill])
+        }
     }
+    return m
 }
 
 // Sigmoid function. Later, will add more options for standard 1/(1+e^-x)
