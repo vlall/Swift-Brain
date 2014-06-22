@@ -1,10 +1,5 @@
-//
-//  main.swift
-//  swiftex1
-//
 //  Created by V Lall on 6/8/14.
 //  Copyright (c) 2014 swiftintel. All rights reserved.
-//
 
 import Foundation
 
@@ -14,13 +9,10 @@ func ** (num: Double, power: Double) -> Double{
 }
 
 operator infix *& {}
-func *& (I: Double, J: Double) -> Array<Array<Double>>{
-    var fill = 0.0
-    var m = Array<Array<Double>>()
+func *& (fill: Double, I: NSInteger) -> Array<Double>{
+    var m = Array<Double>()
     for index in 1...I{
-        for nextIndex in 1...J{
-            m.append([fill])
-        }
+            m.append(fill)
     }
     return m
 }
@@ -31,15 +23,15 @@ func randomFunc(a: Double, b:Double) -> (Double) {
     return output
 }
 
-func makeMatrix(I:Double, J:Double)->(Array<Array<Double>>){
-    var fill = 0.0
-    var m = Array<Array<Double>>()
-    for index in 1...I{
-        for nextIndex in 1...J{
-            m.append([fill])
-        }
+func makeMatrix(I:NSInteger, J:NSInteger)->(Array<Array<Double>>){
+    var NumColumns = I
+    var NumRows = J
+    var array = Array<Array<Double>>()
+    for column in 0..NumColumns {
+        array.append(Array(count:NumRows, repeatedValue:Double()))
     }
-    return m
+
+    return array
 }
 
 //sigmoid function. Later, will add more options for standard 1/(1+e^-x)
@@ -56,43 +48,49 @@ func dsigmoid(x: Double)->(Double){
 class NN {
 
     // Using default values may break this... Always initialize ni,nh,no
-    var ni: Double = 0.0
-    var nh: Double = 0.0
-    var no: Double = 0.0
+    var ni = 2
+    var nh = 2
+    var no = 2
     var ai = []
     var ah = []
     var ao = []
-    var wi = []
-    var wo = []
-    var ci = []
-    var co = []
+    var wi = Array<Array<Double>>()
+    var wo = Array<Array<Double>>()
+    var ci = Array<Array<Double>>()
+    var co = Array<Array<Double>>()
     
-    init(ni:Double, nh:Double, no:Double) {
+    init(ni:NSInteger, nh:NSInteger, no:NSInteger) {
         // number of input, hidden, and output nodes
         self.ni = ni+1 // +1 for bias node
         self.nh = nh
         self.no = no
         
         // activations for nodes CHANGE THIS*******
-        self.ai = [1.0]//*self.ni
-        self.ah = [1.0]//*self.nh
-        self.ao = [1.0]//*self.no
+        self.ai = 1.0*&self.ni
+        self.ah = 1.0*&self.nh
+        self.ao = 1.0*&self.no
         
         //create weights
-        self.wi = makeMatrix(4.0,4.0)
-        self.wi = makeMatrix(self.ni, self.nh)
+        var hi = makeMatrix(4,4)
+        self.wi = makeMatrix(self.ni, self.no)
         self.wo = makeMatrix(self.nh, self.no)
+        println(hi)
+        hi[3][3]=randomFunc(-0.2, 0.2)
         
-        for i in 1...(self.ni){
-            for j in 1...(self.nh){
-                self.wi[i][j] = randomFunc(-0.2, 0.2)
+        for i in 0...(self.ni-1){
+            println(i)
+            for j in 0...(self.nh-1){
+                self.wi[i][j]=randomFunc(-0.2, 0.2)
             }
+            println(self.wi[i])
+
         }
-        for j in 1...(self.nh){
-            for k in 1...(self.no){
+        for j in 0...(self.nh-1){
+            for k in 0...(self.no-1){
                 self.wo[j][k] = randomFunc(-2.0, 2.0)
             }
         }
+
         
         // last change in weights for momentum
         self.ci = makeMatrix(self.ni, self.nh)
@@ -102,4 +100,4 @@ class NN {
     
 }
 
-let myFirstNN = NN(ni: 4,nh: 4,no: 4)
+let myFirstNN = NN(ni: 10,nh: 10,no: 10)
