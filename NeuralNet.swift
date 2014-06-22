@@ -1,5 +1,10 @@
+//
+//  main.swift
+//  swiftex1
+//
 //  Created by V Lall on 6/8/14.
 //  Copyright (c) 2014 swiftintel. All rights reserved.
+//
 
 import Foundation
 
@@ -65,17 +70,14 @@ class NN {
         self.nh = nh
         self.no = no
         
-        // activations for nodes CHANGE THIS*******
+        // activations for nodes
         self.ai = 1.0*&self.ni
         self.ah = 1.0*&self.nh
         self.ao = 1.0*&self.no
         
         //create weights
-        var hi = makeMatrix(4,4)
         self.wi = makeMatrix(self.ni, self.no)
         self.wo = makeMatrix(self.nh, self.no)
-        println(hi)
-        hi[3][3]=randomFunc(-0.2, 0.2)
         
         for i in 0...(self.ni-1){
             println(i)
@@ -98,6 +100,36 @@ class NN {
 
     }
     
+    func update(self,inputs:NSInteger) -> (Array) {
+        if (inputs.count != self.ni-1){
+            println("wrong number of inputs")
+        }
+        // input activations
+        for i in 1...(self.ni-1){
+        //self.ai[i] = sigmoid(inputs[i])
+            self.ai[i] = inputs[i]
+        }
+        // hidden activations
+        for j in 1...(self.nh-1){
+            var sum = 0.0
+            for i in 1...(self.ni-1){
+                sum = sum + self.ai[i] * self.wi[i][j]
+            }
+            self.ah[j] = sigmoid(sum)
+            
+        }
+        // output activations
+        for k in 1...(self.no){
+            var sum = 0.0
+            for j in 1...(self.nh){
+                sum = sum + self.ah[j] * self.wo[j][k]
+            }
+            self.ao[k] = sigmoid(sum)
+        }
+        return self.ao[]
+    }
 }
 
 let myFirstNN = NN(ni: 10,nh: 10,no: 10)
+var x = 2.0*&4
+println(x)
