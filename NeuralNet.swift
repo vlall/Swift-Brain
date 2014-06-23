@@ -172,7 +172,7 @@ class NN {
         return error
     }
     
-    func test(patterns:Array<Array<Double>>)->(){
+    func test(patterns:Array<Array<Array<NSInteger>>>)->(){
         for p in 0...patterns.count{
          //   println("\(patterns[p][0]) ->  \(self.update(patterns[p][0]))")
         }
@@ -188,14 +188,13 @@ class NN {
         }
     
     }
-    func train(patterns:Array<Array<Double>>, iterations:NSInteger=1000, N:Double=0.5, M:Double=0.1){
+    func train(patterns:Array<Array<Array<NSInteger>>>, iterations:NSInteger=1000, N:Double=0.5, M:Double=0.1){
     // N: learning rate
     // M: momentum factor
         for i in 0..iterations{
                 var error = 0.0
             for p in 0..patterns.count-1{
-                //Fix this line to patterns[p][0]
-                var inputs = patterns[p]
+                var inputs = patterns[p][0]
                 var targets = patterns[p][1]
                 self.update(inputs)
                // error = error + self.backPropagate(targets, N: N, M: M)
@@ -229,6 +228,3 @@ var x = [2.0]*&4
 //var y = myFirstNN.ai[3]
 var z = myFirstNN.update([1.2,2.3,1.2,2.3,1.2,2.3,1.2,2.31,2,2.3,3.9])
 println(z)
-
-
-
