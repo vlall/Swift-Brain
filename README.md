@@ -1,4 +1,4 @@
-Swift-Intelligence
+Swift-Brain
 ==================
 
 This is a project for Machine Learning algorithms with Swift for iOS development. 
