@@ -23,13 +23,6 @@ class Matrix{
     
         return array
     }
-
-    func randomFunc(a: Double, b:Double) -> (Double) {
-        var randNum = arc4random_uniform(100)/100
-        var output = (b-a)*Double(randNum) + (a)
-        return output
-    }
-    
     
     
 }
