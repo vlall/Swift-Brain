@@ -1,5 +1,6 @@
 //  Created by V Lall on 6/8/14.
 //  Copyright (c) 2014 swiftintel. All rights reserved.
+//
 
 import Foundation
 
@@ -70,8 +71,6 @@ class NN {
         
         // activations for nodes
         self.ai = [1.0]*&self.ni
-        var x=[1.0]*&self.ni
-        x[2]=2.0
         self.ah = [1.0]*&self.nh
         self.ao = [1.0]*&self.no
         
@@ -80,12 +79,9 @@ class NN {
         self.wo = makeMatrix(self.nh, self.no)
         
         for i in 0...(self.ni-1){
-            println(i)
             for j in 0...(self.nh-1){
                 self.wi[i][j]=randomFunc(-0.2, 0.2)
             }
-            println(self.wi[i])
-
         }
         for j in 0...(self.nh-1){
             for k in 0...(self.no-1){
@@ -125,9 +121,52 @@ class NN {
             }
             self.ao[k] = sigmoid(sum)
         }
-        return inputs
+        return self.ao
     }
-
+    
+    func backPropagate(targets:Array, N:Array, M:Array)->(Double){
+        if targets.count != self.no{
+            println("wrong number of target values")
+        }
+        // calculate error terms for output
+        var output_deltas = [0.0] *& self.no
+        for k in 0..(self.no){
+            var error = targets[k]-self.ao[k]
+            output_deltas[k] = dsigmoid(self.ao[k]) * error
+        }
+        // calculate error terms for hidden
+       var hidden_deltas = [0.0] *& self.nh
+        for j in 0..(self.nh){
+            var error = 0.0
+            for k in 0..(self.no){
+                error = error + output_deltas[k]*self.wo[j][k]
+            }
+            hidden_deltas[j] = dsigmoid(self.ah[j]) * error
+        }
+        // update output weights
+        for j in 0..(self.nh){
+            for k in 0..(self.no){
+                var change = output_deltas[k]*self.ah[j]
+                self.wo[j][k] = self.wo[j][k] + N*change + M*self.co[j][k]
+                self.co[j][k] = change
+                //print N*change, M*self.co[j][k]
+            }
+        }
+        // update input weights
+        for i in 0..(self.ni){
+            for j in 0..(self.nh){
+                var change = hidden_deltas[j]*self.ai[i]
+                self.wi[i][j] = self.wi[i][j] + N*change + M*self.ci[i][j]
+                self.ci[i][j] = change
+            }
+        }
+        // calculate error
+        var error = 0.0
+        for k in 0...(targets.count){
+            error = error + 0.5*(targets[k]-self.ao[k])**2
+        }
+        return error
+    }
 }
 
 let myFirstNN = NN(ni: 10,nh: 10,no: 10)
@@ -135,9 +174,4 @@ var x = [2.0]*&4
 //var y = myFirstNN.ai[3]
 var z = myFirstNN.update([1.2,2.3,1.2,2.3,1.2,2.3,1.2,2.31,2,2.3,3.9])
 println(z)
-
-var asd = [3.4,4.4,4.3,42.3]
-var X123 = [2.4]*&3
-X123[1]=3.0
-println(X123)
 
