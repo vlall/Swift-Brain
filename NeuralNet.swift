@@ -128,7 +128,7 @@ class NN {
         return self.ao
     }
     
-    func backPropagate(targets:Array, N:Array, M:Array)->(Double){
+    func backPropagate(targets:Array<Double>, N:Double, M:Double)->(Double){
         if targets.count != self.no{
             println("wrong number of target values")
         }
@@ -198,12 +198,29 @@ class NN {
                 var inputs = patterns[p]
                 var targets = patterns[p][1]
                 self.update(inputs)
-                error = error + self.backPropagate(targets, N, M)
+               // error = error + self.backPropagate(targets, N: N, M: M)
             }
             if i % 100 == 0{
                 println("error \(error)")
             }
         }
+    }
+    
+    func demo()->(){
+    //Teach network XOR function
+    let pat = [
+    [[0,0], [0]],
+    [[0,1], [1]],
+    [[1,0], [1]],
+    [[1,1], [0]]
+    ]
+    
+    // create a network with two input, two hidden, and one output nodes
+    let n = NN(ni: 2,nh: 2,no: 1)
+    // train it with some patterns
+    n.train(pat)
+    // test it
+    n.test(pat)
     }
 }
 
@@ -212,4 +229,6 @@ var x = [2.0]*&4
 //var y = myFirstNN.ai[3]
 var z = myFirstNN.update([1.2,2.3,1.2,2.3,1.2,2.3,1.2,2.31,2,2.3,3.9])
 println(z)
+
+
 
