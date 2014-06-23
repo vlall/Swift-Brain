@@ -1,3 +1,7 @@
+//
+//  main.swift
+//  swiftex1
+//
 //  Created by V Lall on 6/8/14.
 //  Copyright (c) 2014 swiftintel. All rights reserved.
 //
@@ -166,6 +170,40 @@ class NN {
             error = error + 0.5*(targets[k]-self.ao[k])**2
         }
         return error
+    }
+    
+    func test(patterns:Array<Array<Double>>)->(){
+        for p in 0...patterns.count{
+         //   println("\(patterns[p][0]) ->  \(self.update(patterns[p][0]))")
+        }
+    }
+    func weights()->(){
+        print("Input weights:")
+        for i in 0..(self.ni){
+            println(self.wi[i])
+            println("Output weights:")
+        }
+        for j in 0..(self.nh){
+            print(self.wo[j])
+        }
+    
+    }
+    func train(patterns:Array<Array<Double>>, iterations:NSInteger=1000, N:Double=0.5, M:Double=0.1){
+    // N: learning rate
+    // M: momentum factor
+        for i in 0..iterations{
+                var error = 0.0
+            for p in 0..patterns.count-1{
+                //Fix this line to patterns[p][0]
+                var inputs = patterns[p]
+                var targets = patterns[p][1]
+                self.update(inputs)
+                error = error + self.backPropagate(targets, N, M)
+            }
+            if i % 100 == 0{
+                println("error \(error)")
+            }
+        }
     }
 }
 
