@@ -1,11 +1,35 @@
-// Some notes. This doesn't make sense.
+// Stole some of these from the original Neural Network. I'll make it look fancier soon.
+class Matrix{
 
-func MatrixMaker(I:Double, J:Double)->(Array<Array<Double>>){
-    var NumColumns = 27
-    var NumRows = 52
-    var array = Array<Array<Double>>()
-    for column in 0..NumColumns {
-        array.append(Array(count:NumRows, repeatedValue:Double()))
+    operator infix *& {}
+    func *& (fill: Array<Double>, I: NSInteger) -> Array<Double>{
+        var m = Array<Double>()
+        var length = fill.count-1
+        for times in 1...I{
+            for index in 0...length{
+                m.append(fill[index])
+            }
+        }
+        return m
     }
-    return Matrix
+    
+    func makeMatrix(I:NSInteger, J:NSInteger)->(Array<Array<Double>>){
+        var NumColumns = I
+        var NumRows = J
+        var array = Array<Array<Double>>()
+        for column in 0..NumColumns {
+            array.append(Array(count:NumRows, repeatedValue:Double()))
+        }
+    
+        return array
+    }
+
+    func randomFunc(a: Double, b:Double) -> (Double) {
+        var randNum = arc4random_uniform(100)/100
+        var output = (b-a)*Double(randNum) + (a)
+        return output
+    }
+    
+    
+    
 }
