@@ -1,10 +1,5 @@
-//
-//  main.swift
-//  swiftex1
-//
 //  Created by V Lall on 6/8/14.
 //  Copyright (c) 2014 swiftintel. All rights reserved.
-//
 
 import Foundation
 
@@ -14,10 +9,13 @@ func ** (num: Double, power: Double) -> Double{
 }
 
 operator infix *& {}
-func *& (fill: Double, I: NSInteger) -> Array<Double>{
+func *& (fill: Array<Double>, I: NSInteger) -> Array<Double>{
     var m = Array<Double>()
-    for index in 1...I{
-            m.append(fill)
+    var length = fill.count-1
+    for times in 1...I{
+        for index in 0...length{
+            m.append(fill[index])
+        }
     }
     return m
 }
@@ -56,9 +54,9 @@ class NN {
     var ni = 2
     var nh = 2
     var no = 2
-    var ai = []
-    var ah = []
-    var ao = []
+    var ai = Array<Double>()
+    var ah = Array<Double>()
+    var ao = Array<Double>()
     var wi = Array<Array<Double>>()
     var wo = Array<Array<Double>>()
     var ci = Array<Array<Double>>()
@@ -71,9 +69,11 @@ class NN {
         self.no = no
         
         // activations for nodes
-        self.ai = 1.0*&self.ni
-        self.ah = 1.0*&self.nh
-        self.ao = 1.0*&self.no
+        self.ai = [1.0]*&self.ni
+        var x=[1.0]*&self.ni
+        x[2]=2.0
+        self.ah = [1.0]*&self.nh
+        self.ao = [1.0]*&self.no
         
         //create weights
         self.wi = makeMatrix(self.ni, self.no)
@@ -99,12 +99,11 @@ class NN {
         self.co = makeMatrix(self.nh, self.no)
 
     }
-    
-    func update(self,inputs:NSInteger) -> (Array) {
-        if (inputs.count != self.ni-1){
+    func update(inputs:Array<Double>) -> (Array<Double>) {
+        if (inputs.count != self.ni){
             println("wrong number of inputs")
         }
-        // input activations
+       // input activations
         for i in 1...(self.ni-1){
         //self.ai[i] = sigmoid(inputs[i])
             self.ai[i] = inputs[i]
@@ -119,17 +118,26 @@ class NN {
             
         }
         // output activations
-        for k in 1...(self.no){
+        for k in 1...(self.no-1){
             var sum = 0.0
-            for j in 1...(self.nh){
+            for j in 1...(self.nh-1){
                 sum = sum + self.ah[j] * self.wo[j][k]
             }
             self.ao[k] = sigmoid(sum)
         }
-        return self.ao[]
+        return inputs
     }
+
 }
 
 let myFirstNN = NN(ni: 10,nh: 10,no: 10)
-var x = 2.0*&4
-println(x)
+var x = [2.0]*&4
+//var y = myFirstNN.ai[3]
+var z = myFirstNN.update([1.2,2.3,1.2,2.3,1.2,2.3,1.2,2.31,2,2.3,3.9])
+println(z)
+
+var asd = [3.4,4.4,4.3,42.3]
+var X123 = [2.4]*&3
+X123[1]=3.0
+println(X123)
+
