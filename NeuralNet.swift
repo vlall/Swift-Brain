@@ -1,7 +1,3 @@
-//
-//  main.swift
-//  swiftex1
-//
 //  Created by V Lall on 6/8/14.
 //  Copyright (c) 2014 swiftintel. All rights reserved.
 //
@@ -172,7 +168,7 @@ class NN {
         return error
     }
     
-    func test(patterns:Array<Array<Array<NSInteger>>>)->(){
+    func test(patterns:Array<Array<Array<Double>>>)->(){
         for p in 0...patterns.count{
          //   println("\(patterns[p][0]) ->  \(self.update(patterns[p][0]))")
         }
@@ -188,7 +184,7 @@ class NN {
         }
     
     }
-    func train(patterns:Array<Array<Array<NSInteger>>>, iterations:NSInteger=1000, N:Double=0.5, M:Double=0.1){
+    func train(patterns:Array<Array<Array<Double>>>, iterations:NSInteger=1000, N:Double=0.5, M:Double=0.1){
     // N: learning rate
     // M: momentum factor
         for i in 0..iterations{
@@ -204,16 +200,18 @@ class NN {
             }
         }
     }
-    
-    func demo()->(){
-    //Teach network XOR function
-    let pat = [
+}
+func demo()->(){
+//Teach network XOR function
+    var pat = Array<Array<Array<Double>>>()
+
+    pat = [
     [[0,0], [0]],
     [[0,1], [1]],
     [[1,0], [1]],
     [[1,1], [0]]
     ]
-    
+
     // create a network with two input, two hidden, and one output nodes
     let n = NN(ni: 2,nh: 2,no: 1)
     // train it with some patterns
@@ -221,10 +219,10 @@ class NN {
     // test it
     n.test(pat)
     }
-}
 
-let myFirstNN = NN(ni: 10,nh: 10,no: 10)
-var x = [2.0]*&4
-//var y = myFirstNN.ai[3]
-var z = myFirstNN.update([1.2,2.3,1.2,2.3,1.2,2.3,1.2,2.31,2,2.3,3.9])
-println(z)
+//let myFirstNN = NN(ni: 10,nh: 10,no: 10)
+//var x = [2.0]*&4
+println(demo())
+
+
+
