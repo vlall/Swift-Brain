@@ -105,12 +105,13 @@ class NN {
             println("wrong number of inputs")
         }
        // input activations
+/*
         println(inputs)
         println(self.ai)
         println(self.ni)
         println(inputs.count)
-        println(self.ni-1)
-        for i in 1...(self.ni-1){
+        println(self.ni-1)*/
+        for i in 0..(self.ni-1){
         //self.ai[i] = sigmoid(inputs[i])
             self.ai[i] = inputs[i]
         }
