@@ -1,3 +1,7 @@
+//
+//  main.swift
+//  swiftex1
+//
 //  Created by V Lall on 6/8/14.
 //  Copyright (c) 2014 swiftintel. All rights reserved.
 //
@@ -75,11 +79,12 @@ class NN {
         self.ao = [1.0]*&self.no
         
         //create weights
-        self.wi = makeMatrix(self.ni, self.no)
+        self.wi = makeMatrix(self.ni, self.nh)
         self.wo = makeMatrix(self.nh, self.no)
         
         for i in 0...(self.ni-1){
             for j in 0...(self.nh-1){
+                println(self.wi[0][1])
                 self.wi[i][j]=randomFunc(-0.2, 0.2)
             }
         }
@@ -96,10 +101,15 @@ class NN {
 
     }
     func update(inputs:Array<Double>) -> (Array<Double>) {
-        if (inputs.count != self.ni){
+        if (inputs.count != self.ni-1){
             println("wrong number of inputs")
         }
        // input activations
+        println(inputs)
+        println(self.ai)
+        println(self.ni)
+        println(inputs.count)
+        println(self.ni-1)
         for i in 1...(self.ni-1){
         //self.ai[i] = sigmoid(inputs[i])
             self.ai[i] = inputs[i]
