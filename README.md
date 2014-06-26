@@ -1,6 +1,6 @@
 Swift-Brain
 ==================
-The world's first ever Neural Network/Machine Learning library for Apple's Swift...
+*The world's first ever Neural Network/Machine Learning library for Apple's Swift...*
 This is a project for math,stat, and AI algorithms in Swift for iOS development. 
 I plan to compile my scripts into a useful library that will help translate my Python machine learning algorithms into Swift
 
