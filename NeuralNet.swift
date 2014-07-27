@@ -2,8 +2,7 @@
 //  main.swift
 //  swiftex1
 //
-//  Created by V Lall on 6/8/14.
-//  Copyright (c) 2014 swiftintel. All rights reserved.
+//  Created by V Lall on 6/8/14
 //
 
 import Foundation
@@ -55,7 +54,7 @@ func dsigmoid(x: Double)->(Double){
 
 class NN {
 
-    // Using default values may break this... Always initialize ni,nh,no
+    // Using default values may break this... You should initialize ni,nh,no
     var ni = 2
     var nh = 2
     var no = 2
