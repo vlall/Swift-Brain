@@ -10,11 +10,7 @@
 		A573CE1B1B1BD1C200C2ECC1 /* Brain.h in Headers */ = {isa = PBXBuildFile; fileRef = A573CE1A1B1BD1C200C2ECC1 /* Brain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A573CE211B1BD1C200C2ECC1 /* Brain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A573CE151B1BD1C200C2ECC1 /* Brain.framework */; };
 		A573CE281B1BD1C200C2ECC1 /* BrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573CE271B1BD1C200C2ECC1 /* BrainTests.swift */; };
-		A573CE361B1BD22C00C2ECC1 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573CE321B1BD22C00C2ECC1 /* NeuralNetwork.swift */; };
-		A573CE381B1BD22C00C2ECC1 /* svm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573CE341B1BD22C00C2ECC1 /* svm.swift */; };
-		A573CE3B1B1BD23800C2ECC1 /* mathFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573CE391B1BD23800C2ECC1 /* mathFunc.swift */; };
-		A573CE3C1B1BD23800C2ECC1 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573CE3A1B1BD23800C2ECC1 /* Matrix.swift */; };
-		A573CE3F1B1BD25100C2ECC1 /* kalman.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573CE3E1B1BD25100C2ECC1 /* kalman.swift */; };
+		A573CE421B1BD4B300C2ECC1 /* source in Resources */ = {isa = PBXBuildFile; fileRef = A573CE411B1BD4B300C2ECC1 /* source */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +30,7 @@
 		A573CE201B1BD1C200C2ECC1 /* BrainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A573CE261B1BD1C200C2ECC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A573CE271B1BD1C200C2ECC1 /* BrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainTests.swift; sourceTree = "<group>"; };
-		A573CE321B1BD22C00C2ECC1 /* NeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
-		A573CE341B1BD22C00C2ECC1 /* svm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = svm.swift; sourceTree = "<group>"; };
-		A573CE391B1BD23800C2ECC1 /* mathFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = mathFunc.swift; path = math/mathFunc.swift; sourceTree = "<group>"; };
-		A573CE3A1B1BD23800C2ECC1 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = math/Matrix.swift; sourceTree = "<group>"; };
-		A573CE3E1B1BD25100C2ECC1 /* kalman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = kalman.swift; path = statistics/kalman.swift; sourceTree = "<group>"; };
+		A573CE411B1BD4B300C2ECC1 /* source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = source; path = ../../source; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				A573CE1A1B1BD1C200C2ECC1 /* Brain.h */,
-				A573CE3D1B1BD23C00C2ECC1 /* Math */,
-				A573CE321B1BD22C00C2ECC1 /* NeuralNetwork.swift */,
-				A573CE401B1BD25400C2ECC1 /* Statistics */,
-				A573CE341B1BD22C00C2ECC1 /* svm.swift */,
+				A573CE411B1BD4B300C2ECC1 /* source */,
 				A573CE181B1BD1C200C2ECC1 /* Supporting Files */,
 			);
 			path = Brain;
@@ -114,23 +103,6 @@
 				A573CE261B1BD1C200C2ECC1 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A573CE3D1B1BD23C00C2ECC1 /* Math */ = {
-			isa = PBXGroup;
-			children = (
-				A573CE391B1BD23800C2ECC1 /* mathFunc.swift */,
-				A573CE3A1B1BD23800C2ECC1 /* Matrix.swift */,
-			);
-			name = Math;
-			sourceTree = "<group>";
-		};
-		A573CE401B1BD25400C2ECC1 /* Statistics */ = {
-			isa = PBXGroup;
-			children = (
-				A573CE3E1B1BD25100C2ECC1 /* kalman.swift */,
-			);
-			name = Statistics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A573CE421B1BD4B300C2ECC1 /* source in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,11 +213,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A573CE3C1B1BD23800C2ECC1 /* Matrix.swift in Sources */,
-				A573CE3B1B1BD23800C2ECC1 /* mathFunc.swift in Sources */,
-				A573CE3F1B1BD25100C2ECC1 /* kalman.swift in Sources */,
-				A573CE381B1BD22C00C2ECC1 /* svm.swift in Sources */,
-				A573CE361B1BD22C00C2ECC1 /* NeuralNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

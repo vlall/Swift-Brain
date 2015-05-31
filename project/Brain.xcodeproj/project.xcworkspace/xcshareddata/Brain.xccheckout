@@ -14,11 +14,11 @@
 		<string>https://github.com/istx25/swift-brain.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Brain.xcodeproj</string>
+	<string>project/Brain.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D472673D710C2F6512E343328ADAF9BE3E47A4A4</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/istx25/swift-brain.git</string>
