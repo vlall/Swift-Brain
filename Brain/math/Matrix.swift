@@ -1,6 +1,14 @@
-// Stole some of these from the original Neural Network. I'll make it look fancier soon.
-class Matrix{
+//
+//  Matrix.swift
+//  Brain
+//
+//  Created by Vishal on 201X-XX-XX.
+//  Copyright (c) 2015 Vishal. All rights reserved.
+//
+//  Stole some of these from the original Neural Network. I'll make it look fancier soon.
+//
 
+class Matrix {
     operator infix *& {}
     func *& (fill: Array<Double>, I: NSInteger) -> Array<Double>{
         var m = Array<Double>()
@@ -10,6 +18,7 @@ class Matrix{
                 m.append(fill[index])
             }
         }
+    
         return m
     }
     
@@ -23,6 +32,4 @@ class Matrix{
     
         return array
     }
-    
-    
 }
