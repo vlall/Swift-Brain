@@ -8,6 +8,7 @@
 import Foundation
 
 operator infix ** {}
+
 func ** (num: Double, power: Double) -> Double{
     return pow(num, power)
 }
