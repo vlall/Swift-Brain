@@ -3,7 +3,7 @@ The first neural networking and machine learning library written in Swift. This 
 
 ###Ongoing Development
   Tools:
-- [x] Matrix operations)
+- [x] Matrix operations
  Machine Learning algorithms
 - [ ] Basic regressions
 - [x] Kalman filter 
