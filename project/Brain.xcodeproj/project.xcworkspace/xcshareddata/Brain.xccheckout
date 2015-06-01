@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5C667867-DC26-4897-A18E-9FF63008FCA3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Brain</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D472673D710C2F6512E343328ADAF9BE3E47A4A4</key>
+		<string>https://github.com/istx25/swift-brain.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>project/Brain.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D472673D710C2F6512E343328ADAF9BE3E47A4A4</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/istx25/swift-brain.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D472673D710C2F6512E343328ADAF9BE3E47A4A4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D472673D710C2F6512E343328ADAF9BE3E47A4A4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>swift-brain</string>
+		</dict>
+	</array>
+</dict>
+</plist>
