@@ -1,5 +1,7 @@
 #Swift Brain
-The first neural networking and machine learning library written in Swift. This is a project for AI algorithms in Swift for iOS and OS X development. This project includes algorithms focused on Bayes theorem, neural networks, SVMs, Matrices, etc.. Feel free to contribute.
+The first neural network / machine learning library written in Swift. This is a project for AI algorithms in Swift for iOS and OS X development. This project includes algorithms focused on Bayes theorem, neural networks, SVMs, Matrices, etc.. Feel free to contribute.
+
+*Examples coming soon.*
 
 ###Ongoing Development
   Tools:
@@ -8,7 +10,7 @@ The first neural networking and machine learning library written in Swift. This 
 - [ ] Basic regressions
 - [x] Kalman filter 
 - [x] Neural networks
-- [ ] Support vector machines
+- [x] Support vector machines
 - [ ] Bayesian Classifiers 
 - [ ] Clustering
 - [ ] Self Organizing
