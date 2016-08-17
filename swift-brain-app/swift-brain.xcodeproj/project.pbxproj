@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32FAFFA61D64FD9A00F5EC03 /* mathFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAFFA01D64FD9A00F5EC03 /* mathFunc.swift */; };
+		32FAFFA71D64FD9A00F5EC03 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAFFA11D64FD9A00F5EC03 /* Matrix.swift */; };
+		32FAFFA81D64FD9A00F5EC03 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAFFA21D64FD9A00F5EC03 /* NeuralNetwork.swift */; };
+		32FAFFA91D64FD9A00F5EC03 /* kalman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAFFA41D64FD9A00F5EC03 /* kalman.swift */; };
+		32FAFFAA1D64FD9A00F5EC03 /* svm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAFFA51D64FD9A00F5EC03 /* svm.swift */; };
 		85A284501BC2FA73001C04AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2844F1BC2FA73001C04AF /* AppDelegate.swift */; };
 		85A284521BC2FA73001C04AF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A284511BC2FA73001C04AF /* FirstViewController.swift */; };
 		85A284541BC2FA73001C04AF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A284531BC2FA73001C04AF /* SecondViewController.swift */; };
@@ -15,7 +20,6 @@
 		85A2845C1BC2FA73001C04AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A2845A1BC2FA73001C04AF /* LaunchScreen.storyboard */; };
 		85A284671BC2FA73001C04AF /* swift_brainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A284661BC2FA73001C04AF /* swift_brainTests.swift */; };
 		85A284721BC2FA73001C04AF /* swift_brainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A284711BC2FA73001C04AF /* swift_brainUITests.swift */; };
-		85A284881BC2FBB3001C04AF /* Surge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A284851BC2FAAC001C04AF /* Surge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,23 +37,14 @@
 			remoteGlobalIDString = 85A2844B1BC2FA73001C04AF;
 			remoteInfo = "swift-brain";
 		};
-		85A284841BC2FAAC001C04AF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 85A2847F1BC2FAAB001C04AF /* Surge.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8A1E1AA19917A79009735E2;
-			remoteInfo = Surge;
-		};
-		85A284861BC2FAAC001C04AF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 85A2847F1BC2FAAB001C04AF /* Surge.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F84A6AAE19A9A72F007B53E1;
-			remoteInfo = SurgeTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32FAFFA01D64FD9A00F5EC03 /* mathFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mathFunc.swift; sourceTree = "<group>"; };
+		32FAFFA11D64FD9A00F5EC03 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		32FAFFA21D64FD9A00F5EC03 /* NeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
+		32FAFFA41D64FD9A00F5EC03 /* kalman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kalman.swift; sourceTree = "<group>"; };
+		32FAFFA51D64FD9A00F5EC03 /* svm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = svm.swift; sourceTree = "<group>"; };
 		85A2844C1BC2FA73001C04AF /* swift-brain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-brain.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A2844F1BC2FA73001C04AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85A284511BC2FA73001C04AF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +59,6 @@
 		85A2846D1BC2FA73001C04AF /* swift-brainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-brainUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A284711BC2FA73001C04AF /* swift_brainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_brainUITests.swift; sourceTree = "<group>"; };
 		85A284731BC2FA73001C04AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85A2847F1BC2FAAB001C04AF /* Surge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Surge.xcodeproj; path = "../../../../../Downloads/Surge-master/Surge.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85A284881BC2FBB3001C04AF /* Surge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +86,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32FAFF9E1D64FD9A00F5EC03 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				32FAFF9F1D64FD9A00F5EC03 /* math */,
+				32FAFFA21D64FD9A00F5EC03 /* NeuralNetwork.swift */,
+				32FAFFA31D64FD9A00F5EC03 /* statistics */,
+				32FAFFA51D64FD9A00F5EC03 /* svm.swift */,
+			);
+			name = source;
+			path = ../../source;
+			sourceTree = "<group>";
+		};
+		32FAFF9F1D64FD9A00F5EC03 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				32FAFFA01D64FD9A00F5EC03 /* mathFunc.swift */,
+				32FAFFA11D64FD9A00F5EC03 /* Matrix.swift */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		32FAFFA31D64FD9A00F5EC03 /* statistics */ = {
+			isa = PBXGroup;
+			children = (
+				32FAFFA41D64FD9A00F5EC03 /* kalman.swift */,
+			);
+			path = statistics;
+			sourceTree = "<group>";
+		};
 		85A284431BC2FA73001C04AF = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +138,7 @@
 		85A2844E1BC2FA73001C04AF /* swift-brain */ = {
 			isa = PBXGroup;
 			children = (
-				85A2847F1BC2FAAB001C04AF /* Surge.xcodeproj */,
+				32FAFF9E1D64FD9A00F5EC03 /* source */,
 				85A2844F1BC2FA73001C04AF /* AppDelegate.swift */,
 				85A284511BC2FA73001C04AF /* FirstViewController.swift */,
 				85A284531BC2FA73001C04AF /* SecondViewController.swift */,
@@ -144,15 +166,6 @@
 				85A284731BC2FA73001C04AF /* Info.plist */,
 			);
 			path = "swift-brainUITests";
-			sourceTree = "<group>";
-		};
-		85A284801BC2FAAB001C04AF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				85A284851BC2FAAC001C04AF /* Surge.framework */,
-				85A284871BC2FAAC001C04AF /* SurgeTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,12 +257,6 @@
 			mainGroup = 85A284431BC2FA73001C04AF;
 			productRefGroup = 85A2844D1BC2FA73001C04AF /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 85A284801BC2FAAB001C04AF /* Products */;
-					ProjectRef = 85A2847F1BC2FAAB001C04AF /* Surge.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				85A2844B1BC2FA73001C04AF /* swift-brain */,
@@ -258,23 +265,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		85A284851BC2FAAC001C04AF /* Surge.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Surge.framework;
-			remoteRef = 85A284841BC2FAAC001C04AF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		85A284871BC2FAAC001C04AF /* SurgeTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SurgeTests.xctest;
-			remoteRef = 85A284861BC2FAAC001C04AF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		85A2844A1BC2FA73001C04AF /* Resources */ = {
@@ -309,8 +299,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A284541BC2FA73001C04AF /* SecondViewController.swift in Sources */,
+				32FAFFA71D64FD9A00F5EC03 /* Matrix.swift in Sources */,
+				32FAFFAA1D64FD9A00F5EC03 /* svm.swift in Sources */,
+				32FAFFA91D64FD9A00F5EC03 /* kalman.swift in Sources */,
 				85A284501BC2FA73001C04AF /* AppDelegate.swift in Sources */,
 				85A284521BC2FA73001C04AF /* FirstViewController.swift in Sources */,
+				32FAFFA61D64FD9A00F5EC03 /* mathFunc.swift in Sources */,
+				32FAFFA81D64FD9A00F5EC03 /* NeuralNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,38 +8,23 @@
 
 import Foundation
 
-operator infix ** {}
+infix operator ** {}
 
 func ** (num: Double, power: Double) -> Double{
     return pow(num, power)
 }
 
-operator infix *& {}
-func *& (fill: Array<Double>, I: NSInteger) -> Array<Double>{
-    var m = Array<Double>()
-    var length = fill.count-1
-    for times in 1...I{
-        for index in 0...length{
-            m.append(fill[index])
-        }
-    }
-    
-    return m
-}
-
-func randomFunc(a: Double, b:Double) -> (Double) {
-    var randNum = arc4random_uniform(100)/100
-    var output = (b-a)*Double(randNum) + (a)
+func randomFunc(a: Double, _ b:Double) -> (Double) {
+    let randNum = arc4random_uniform(100)/100
+    let output = (b-a)*Double(randNum) + (a)
     
     return output
 }
 
-func makeMatrix(I:NSInteger, J:NSInteger)->(Array<Array<Double>>){
-    var NumColumns = I
-    var NumRows = J
+func makeMatrix(I:NSInteger, _ J:NSInteger)->(Array<Array<Double>>){
     var array = Array<Array<Double>>()
-    for column in 0..NumColumns {
-        array.append(Array(count:NumRows, repeatedValue:Double()))
+    for _ in 0..<I {
+        array.append(Array(count:J, repeatedValue:Double()))
     }
 
     return array
@@ -87,7 +72,6 @@ class NN {
         
         for i in 0...(self.ni-1){
             for j in 0...(self.nh-1){
-                println(self.wi[0][1])
                 self.wi[i][j]=randomFunc(-0.2, 0.2)
             }
         }
@@ -106,7 +90,7 @@ class NN {
     
     func update(inputs:Array<Double>) -> (Array<Double>) {
         if (inputs.count != self.ni-1){
-            println("wrong number of inputs")
+            print("[NeuralNetwork] wrong number of inputs")
         }
         
         // input activations
@@ -116,7 +100,7 @@ class NN {
         // println(inputs.count)
         // println(self.ni-1)
         
-        for i in 0..(self.ni-1){
+        for i in 0..<(self.ni-1){
         //self.ai[i] = sigmoid(inputs[i])
             self.ai[i] = inputs[i]
         }
@@ -146,21 +130,21 @@ class NN {
     
     func backPropagate(targets:Array<Double>, N:Double, M:Double)->(Double){
         if targets.count != self.no{
-            println("wrong number of target values")
+            print("[NeuralNetwork] wrong number of target values")
         }
         
         // calculate error terms for output
         var output_deltas = [0.0] *& self.no
-        for k in 0..(self.no){
-            var error = targets[k]-self.ao[k]
+        for k in 0..<(self.no){
+            let error = targets[k]-self.ao[k]
             output_deltas[k] = dsigmoid(self.ao[k]) * error
         }
         
         // calculate error terms for hidden
         var hidden_deltas = [0.0] *& self.nh
-        for j in 0..(self.nh){
+        for j in 0..<(self.nh){
             var error = 0.0
-            for k in 0..(self.no){
+            for k in 0..<(self.no){
                 error = error + output_deltas[k]*self.wo[j][k]
             }
             
@@ -168,9 +152,9 @@ class NN {
         }
         
         // update output weights
-        for j in 0..(self.nh){
-            for k in 0..(self.no){
-                var change = output_deltas[k]*self.ah[j]
+        for j in 0..<(self.nh){
+            for k in 0..<(self.no){
+                let change = output_deltas[k]*self.ah[j]
                 self.wo[j][k] = self.wo[j][k] + N*change + M*self.co[j][k]
                 self.co[j][k] = change
                 //print N*change, M*self.co[j][k]
@@ -178,9 +162,9 @@ class NN {
         }
         
         // update input weights
-        for i in 0..(self.ni){
-            for j in 0..(self.nh){
-                var change = hidden_deltas[j]*self.ai[i]
+        for i in 0..<(self.ni){
+            for j in 0..<(self.nh){
+                let change = hidden_deltas[j]*self.ai[i]
                 self.wi[i][j] = self.wi[i][j] + N*change + M*self.ci[i][j]
                 self.ci[i][j] = change
             }
@@ -196,20 +180,20 @@ class NN {
     }
     
     func test(patterns:Array<Array<Array<Double>>>)->(){
-        for p in 0...patterns.count{
+        for _ in 0...patterns.count{
          //   println("\(patterns[p][0]) ->  \(self.update(patterns[p][0]))")
         }
     }
     
-    func weights()->(){
-        print("Input weights:")
-        for i in 0..(self.ni){
-            println(self.wi[i])
-            println("Output weights:")
+    func weights() {
+        print("[NeuralNetwork] Input weights:")
+        for i in 0..<(self.ni){
+            print("[NeuralNetwork] \(self.wi[i])")
+            print("[NeuralNetwork] Output weights:")
         }
         
-        for j in 0..(self.nh){
-            print(self.wo[j])
+        for j in 0..<(self.nh){
+            print("[NeuralNetwork] \(self.wo[j])")
         }
     
     }
@@ -217,17 +201,17 @@ class NN {
     func train(patterns:Array<Array<Array<Double>>>, iterations:NSInteger=1000, N:Double=0.5, M:Double=0.1){
     // N: learning rate
     // M: momentum factor
-        for i in 0..iterations{
-                var error = 0.0
-            for p in 0..patterns.count-1{
-                var inputs = patterns[p][0]
-                var targets = patterns[p][1]
+        for i in 0..<iterations{
+                let error = 0.0
+            for p in 0..<patterns.count-1{
+                let inputs = patterns[p][0]
+//                _ = patterns[p][1]
                 self.update(inputs)
                // error = error + self.backPropagate(targets, N: N, M: M)
             }
             
             if i % 100 == 0{
-                println("error \(error)")
+                print("[NeuralNetwork] error \(error)")
             }
         }
     }
@@ -250,10 +234,10 @@ func demo()->(){
     n.train(pat)
     // test it
     n.test(pat)
-    }
+}
 
     // let myFirstNN = NN(ni: 10,nh: 10,no: 10)
     // var x = [2.0]*&4
-    println(demo())
+//    print(demo())
 
 
