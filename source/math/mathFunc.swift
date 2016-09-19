@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Vishal. All rights reserved.
 //
 
+import Foundation
+
 class mathFunc {
     func randomFunc(a: Double, b:Double) -> (Double) {
-        var randNum = arc4random_uniform(100)/100
-        var output = (b-a)*Double(randNum) + (a)
+        let randNum = arc4random_uniform(100)/100
+        let output = (b-a)*Double(randNum) + (a)
     
         return output
     }
