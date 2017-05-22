@@ -1,7 +1,7 @@
-#Swift Brain
+# Swift Brain
 The first neural network / machine learning library written in Swift. This is a project for AI algorithms in Swift for iOS and OS X development. This project includes algorithms focused on Bayes theorem, neural networks, SVMs, Matrices, etc.. Feel free to contribute.
 
-###Development
+### Development
   Tools:
 - [x] Matrix operations
  Machine Learning algorithms
@@ -16,7 +16,7 @@ The first neural network / machine learning library written in Swift. This is a 
 - [ ]  Bayes theorem/naive classifier
 - [ ]  Markov model
 
-###Installation and Setup
+### Installation and Setup
 Podfile coming
 
-###Working Example Application coming.
+### Working Example Application coming.
